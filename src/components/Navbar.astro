@@ -1,0 +1,131 @@
+---
+import menu from '../../menu.json';
+
+const { business } = menu;
+---
+
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="/" class="brand-link">
+        <span class="brand-name">{business.name}</span>
+      </a>
+      <nav class="navbar-nav desktop-only">
+        <a href="#menu" class="nav-link active">Menú</a>
+        <a href="#historia" class="nav-link">Nuestra Historia</a>
+      </nav>
+    </div>
+    <div class="navbar-actions">
+      <button class="cart-button" id="cart-toggle" aria-label="Abrir carrito">
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--color-surface);
+    box-shadow: 0 1px 3px rgba(49, 47, 38, 0.05);
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-name {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: var(--color-on-surface-variant);
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-on-surface);
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    border-radius: 50%;
+  }
+
+  .cart-button:hover {
+    opacity: 0.8;
+  }
+
+  .cart-button:active {
+    transform: scale(0.95);
+  }
+
+  .cart-button .material-symbols-outlined {
+    font-size: 1.5rem;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-only {
+      display: flex;
+    }
+  }
+</style>

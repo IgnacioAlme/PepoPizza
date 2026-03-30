@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pepo Pizza | The Modern Artisanal Pantry</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#b51a0a",
+              "secondary": "#8c4a00",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#1a5177",
+              "primary-fixed": "#ff7761",
+              "on-error-container": "#510017",
+              "on-surface": "#312f26",
+              "outline": "#7a776b",
+              "tertiary-dim": "#1d537a",
+              "surface-bright": "#fcf6e8",
+              "on-secondary-fixed-variant": "#7c4100",
+              "surface": "#fcf6e8",
+              "on-tertiary-container": "#0a476d",
+              "on-primary-fixed": "#000000",
+              "primary-fixed-dim": "#ff5c44",
+              "primary": "#b51a0a",
+              "on-tertiary": "#ebf3ff",
+              "surface-container-high": "#e8e2d1",
+              "error-container": "#f74b6d",
+              "on-error": "#ffefef",
+              "error-dim": "#a70138",
+              "background": "#fcf6e8",
+              "on-tertiary-fixed": "#003351",
+              "on-primary": "#ffefed",
+              "on-primary-container": "#4e0200",
+              "on-secondary-fixed": "#532a00",
+              "tertiary-container": "#a1d1fe",
+              "on-primary-fixed-variant": "#5f0300",
+              "secondary-container": "#ffc69a",
+              "surface-dim": "#dad4c2",
+              "outline-variant": "#b2ada0",
+              "error": "#b41340",
+              "tertiary": "#2c5f87",
+              "inverse-on-surface": "#a19d90",
+              "secondary-fixed": "#ffc69a",
+              "inverse-primary": "#ff553d",
+              "secondary-dim": "#7b4000",
+              "secondary-fixed-dim": "#ffb375",
+              "primary-container": "#ff7761",
+              "surface-container-highest": "#e3ddcb",
+              "primary-dim": "#a20a00",
+              "tertiary": "#2c5f87",
+              "inverse-surface": "#100e07",
+              "on-secondary": "#fff0e7",
+              "tertiary-fixed-dim": "#93c3ef",
+              "on-surface-variant": "#5f5b51",
+              "on-background": "#312f26",
+              "surface-container-low": "#f6f0e1",
+              "on-secondary-container": "#6f3a00",
+              "surface-variant": "#e3ddcb",
+              "surface-container": "#eee8d8"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-frozen {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, #fcf6e8 0%, #ff7761 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-[#fcf6e8] dark:bg-stone-900 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-['Epilogue'] text-2xl font-black text-[#b51a0a] dark:text-red-500 italic" href="#">
+                    Pepo Pizza
+                </a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-['Epilogue'] font-bold text-lg uppercase tracking-tight text-[#b51a0a] dark:text-red-500 border-b-2 border-[#b51a0a] pb-1" href="#menu">Menu</a>
+<a class="font-['Epilogue'] font-bold text-lg uppercase tracking-tight text-[#5f5b51] dark:text-stone-400 hover:text-[#312f26] dark:hover:text-stone-200 transition-colors" href="#">Nuestra Historia</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#b51a0a] dark:text-red-500 hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-12 pb-24 px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tertiary-container text-on-tertiary-container mb-6">
+<span class="material-symbols-outlined text-sm" data-icon="ac_unit">ac_unit</span>
+<span class="text-xs font-bold tracking-widest uppercase">Congeladas en su punto</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-surface leading-tight mb-8">
+                        Las Mejores Pizzas <span class="text-primary italic">Congeladas</span> de Pepo Pizza
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        Llevamos el sabor de la pizzería artesanal directo a tu freezer. Calidad premium, ingredientes frescos y lista en 10 minutos.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-full font-bold text-lg shadow-lg hover:bg-primary-dim transition-all flex items-center gap-2" href="#menu">
+                            Ver el Menú
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping">local_shipping</span>
+<span class="font-medium">Envío a domicilio</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<!-- Decorative Frost Elements -->
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+<!-- Main Image with Editorial Overlap -->
+<div class="relative z-10 scale-110 md:scale-100">
+<img alt="Pepo Pizza" class="rounded-xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 object-cover aspect-square" data-alt="Gourmet pepperoni pizza with bubbling cheese and fresh basil on a dark stone background with subtle frozen mist effect" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUXlWdpERcmvsFOtfZW3I-3W7fCJRK7khLsjbR5p6CW-uko2sACZc5UEwyeCIKM13MnohMckPnZ7GcxHGriIqeQn3LbMceUHbcaGAQ0d93S0B0Wwb6aPPV3rCF5egymcTKE2cHZyi3J4qD3YQhVpaORSuXQAqiAjzY2SL4K1iE1ScbbVhHut_5Ewb5nMZ13ZJ3BnBKQYl6vMnL9vIc9QDoKrE0s_Le3FN4jrQFYZrYSrcBwTGg4--8UwczTN7X7j-0G1BXMtQ3UA0"/>
+<!-- Floating "Frozen" Badge -->
+<div class="absolute -bottom-6 -right-6 glass-frozen p-6 rounded-xl shadow-xl border border-white/20 flex flex-col items-center gap-2 max-w-[160px] text-center">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="severe_cold" style="font-variation-settings: 'FILL' 1;">severe_cold</span>
+<p class="text-sm font-bold text-on-surface">Fresh-Lock Technology</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section -->
+<section class="py-24 bg-surface-container-low px-6" id="menu">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+<div>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-4 tracking-tight">Nuestras Variedades</h2>
+<p class="text-on-surface-variant text-lg">Elegí tu favorita. Todas nuestras pizzas rinden 8 porciones.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm">Artesanales</span>
+<span class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm">8 Porciones</span>
+</div>
+</div>
+<!-- Product Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Muzzarella -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Classic mozzarella pizza with golden melted cheese and tomato sauce swirls on artisanal dough" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUl0Z52msEj3QVsmgE106Jo-OjSJ3t0fGqY6ZJgiA9lChvhupLhEI9RAkacShSE4_NR517Nn-PjIwl6gOFjT57aEfQH0kybtqIXz1u3NghO2jVzzFA0EB-P3-Zp457J9fHb4y45kD9c-T9jzgA50D9ayfL4-kkFAthbhAkf0ZXBIKiipJzDFlQ9T3iHlSdnueuAWKQFPvWo5hNT-8pLStXdTp7Eymwz0PBIK5RUo2eMNlX7Vs-ew7qD97NtkPCpoRiJiJYKDsK3Fha"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Popular</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Muzzarella</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Nuestra clásica mezcla de muzzarella premium, salsa de tomate natural y orégano fresco.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Calabresa -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Spicy calabresa pizza with thin slices of pepperoni and red pepper flakes on a crispy crust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfUEDvvtnSO3ZXu4aSvp0jkC34GBlumzZhKpKfxvXo7PzBFlG985LoNSyWo9G2Fn0N9CXLl5RF0UCu9VAgfkzmaO_w3ir5Dr1iXPfiZAzP_4WPAWcdInOK5sdN-NEijXleijdTp5C_KocbqzwwKd1BGvP5bRCvXXJRgx5eYkQLyCQlCZgMiq-M_eAo7mOWWSCyTbweC9hH2wDWxHlsICz0wZkzep1KExvhZqCEbyFBTOXce_ahg9JacjSIt4Cd4LTkrfnZkqgg_tTB"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Calabresa</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Cantimpalo de primera calidad, muzzarella y un toque de ají molido para los valientes.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Jamón y Morrones -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Traditional ham and bell pepper pizza with vibrant red peppers and savory ham slices" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_htNAse1zV0NbbwP6w4_-pxbdZTgl_LBV8XnWjKE3w7C8HudxW_hlEB0NZyQaAvMSH411IB9n3f7rbc2rmKoMrqZYZqAWmsTrvwCAIiyplVxZgoPL5v6vYQD0EnTVE4w4Tzc16hn4Bk9lZIz3BoqK1xOHhCD5En_0czYRaTpDcpp22e4FO99kcISo_zIlI7tb2EMZkUo884HdK_hlPjxr-2ZVAJBxmj2sz9cQkkrpiAcqOCx3a3xjBJgUOPgx0hMXE260DcLxhaWy"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Jamón y Morrones</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Jamón cocido natural y morrones asados a la leña. Un clásico que nunca falla.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 4: 4 Quesos -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Rich four-cheese pizza featuring melted gorgonzola, parmesan, mozzarella, and provolone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmNh1cSaargittNYtMMiRuiSVwiZ2pFFrnUCxNedPosJ3LPu5_2oxcKgIGr8QOlBWop-LjagNTnVgFDUcaSoLYPXO5Uq8qXuPFXssJgM8N_e2FPvQ_JdmKR90RjtTtvQS4uy7QZLttfxg-45XManIsgwVYfp_Nwceb3sRCqlACo2pPxkj3wNZ3EBA0jWQBJWY_fsfQXDs0AwzRoaj-IJ1zvyS36zdDp47TZo0aMpblaYgj7nslEVooM4-30VRK1wIB6Q5iCMZm45p8"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">4 Quesos</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Muzzarella, Parmesano, Provolone y un toque de Roquefort. Para amantes del queso.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 5: Fugazzetta -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Traditional Argentinian Fugazzetta pizza loaded with sweet caramelized onions and melted mozzarella" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjb19CTnMpV-M5f5kmniZiQTm4HRj0SE7EZpflvvm2_Dy3N1-Ut3tkvZqNo2Y8lXeEAhDzzvNpz2b3j86s2co4_JCND7I5E_jis6Hz6KqEHeLiP69vwwPHPAvzW3hr7lQ0wA-eQvrxRHjo2sK4K_IC72BnvhROLywuLpp-8olzbqt335TpJA-7GZ3ocXQATVa_jtq4zC1iIAdT9mqEqdXc2V53pPxgksS_Od8gt4Q64GbgKlYhjr9mANrhre5sOH-f9-AqTXt6xUdx"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Fugazzetta</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Lluvia de cebollas caramelizadas, muzzarella y especias seleccionadas.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+<!-- Card 6: Carne Desmechada -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Artisanal pizza topped with slow-cooked shredded beef and roasted vegetables on a thick crust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDNJ7K50aF89CbyY3WmuJ-2mFOFl_iS_oOYVhq8YEeVBgEXJVu6lJTXAgfWkCccSJYocMQAD5AuRXt2pZ5vQJxAdqfQ6Z6wDY9AUyfsY6AWbU_J7cuDXMlrbRMzSdYrixgkv3g8MdYtNxxUkjpokN3sth_uYg8APbPODGnyguWzl60WucTQsg7gY5XwfaESk9QbUVyTmqWuvzQaH12zBn7PNyXvBW7IM8YqHLemT_2LRyjY0datOaGZzRVm4--VLB1zotF093UjiV2"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Carne Desmechada</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Nuestra especialidad de la casa. Carne braseada por 12 horas y muzzarella.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-2xl font-black text-on-surface">$8000</span>
+<span class="text-xs text-on-surface-variant block">8 porciones</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest hover:bg-primary hover:text-on-primary transition-colors py-3 px-6 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                    Agregar
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Convenience Section (Ice-to-Oven) -->
+<section class="py-24 px-6 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="bg-tertiary-container/30 p-8 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary text-5xl mb-4" data-icon="kitchen">kitchen</span>
+<h4 class="font-bold text-on-surface mb-2">Guardala</h4>
+<p class="text-xs text-on-surface-variant">Dura hasta 3 meses en tu freezer.</p>
+</div>
+<div class="bg-primary-container/20 p-8 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="oven_gen">oven_gen</span>
+<h4 class="font-bold text-on-surface mb-2">Horneala</h4>
+<p class="text-xs text-on-surface-variant">10-12 minutos a fuego máximo.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-secondary-container/30 p-8 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" data-icon="timer">timer</span>
+<h4 class="font-bold text-on-surface mb-2">Disfrutala</h4>
+<p class="text-xs text-on-surface-variant">Sabor a recién amasada.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-on-surface-variant text-5xl mb-4" data-icon="groups">groups</span>
+<h4 class="font-bold text-on-surface mb-2">Compartila</h4>
+<p class="text-xs text-on-surface-variant">Perfecta para 8 porciones.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-6 leading-tight">Del Freezer al <span class="text-primary italic">Corazón</span></h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        En Pepo Pizza reinventamos el concepto de comida congelada. Usamos un proceso de ultracongelación que mantiene la estructura del gluten y la frescura de los ingredientes intacta.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Sin conservantes artificiales
+                        </li>
+<li class="flex items-center gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Masa con 48hs de fermentación
+                        </li>
+<li class="flex items-center gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Salsa de tomates italianos
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Cart Widget -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="bg-on-surface text-surface-container-lowest w-16 h-16 rounded-full shadow-2xl flex items-center justify-center group hover:bg-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_basket">shopping_basket</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface">2</span>
+</button>
+</div>
+<!-- Sidebar Cart Mockup (Hidden by default but semantic for task) -->
+<aside class="fixed top-0 right-0 h-full w-full max-w-sm bg-surface-container-lowest shadow-2xl z-[60] transform translate-x-full transition-transform duration-300 hidden">
+<div class="p-8 flex flex-col h-full">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-2xl font-bold">Tu Carrito</h3>
+<button class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</button>
+</div>
+<div class="flex-grow space-y-6 overflow-y-auto">
+<!-- Item -->
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg bg-surface-container-high shrink-0 overflow-hidden">
+<img alt="Pizza" class="w-full h-full object-cover" data-alt="Small thumbnail of mozzarella pizza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDlv4cNFapDt8m_MEzTr4WH9su5xYkuHFUn4VXhN5nOKGxIgW4ta9tYrl-8XzIBGeXeuMTLBEW5MY5AyM9A2LaduXx9ivTj6i_2baGMYa0nIW9WJOsztFl1rJ6Y5sCl3HKrX5jd-S5ZgBT6-hOYOc6i9ELhL-fFy3rSvvVkIqMQJmG34r1lmCE_faPDxs0NMMezcKWAUWpzNCyVwclxoL5OsOmHXOxSlCZ90GseqOZQ-3VwDUHVnkYWK5QEcVjvMvZxajyzuIwO2cB"/>
+</div>
+<div>
+<p class="font-bold">Muzzarella</p>
+<p class="text-sm text-on-surface-variant">1 unidad x $8000</p>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="flex justify-between items-center mb-6">
+<span class="text-lg font-medium text-on-surface-variant">Total</span>
+<span class="text-3xl font-black text-on-surface">$16000</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-bold text-lg hover:bg-primary-dim transition-colors">
+                    Confirmar Pedido
+                </button>
+</div>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="bg-[#312f26] dark:bg-black text-[#fcf6e8]">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-['Epilogue'] text-xl font-bold text-[#fcf6e8]">Pepo Pizza</span>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0]">© 2024 Pepo Pizza. The Modern Artisanal Pantry.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Menu</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Nuestra Historia</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-[#b2ada0] hover:text-[#fcf6e8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="text-[#b2ada0] hover:text-[#fcf6e8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-[#b2ada0] hover:text-[#fcf6e8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+<div class="w-full text-center pb-8 opacity-50">
+<p class="text-[10px] uppercase tracking-[0.2em]">Hecho con amor en Buenos Aires</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,221 @@
+---
+import menu from '../../menu.json';
+
+const { categories } = menu;
+const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
+---
+
+<section class="menu-section section" id="menu">
+  <div class="container">
+    <div class="menu-header">
+      <div class="menu-title">
+        <h2>Nuestras Variedades</h2>
+        <p>Elegí tu favorita. Todas nuestras pizzas rinden 8 porciones.</p>
+      </div>
+      <div class="menu-tags">
+        <span class="tag">Artesanales</span>
+        <span class="tag">8 Porciones</span>
+      </div>
+    </div>
+
+    <div class="menu-grid">
+      {pizzas.map((pizza) => (
+        <div class="product-card">
+          <div class="product-image">
+            <div class="image-placeholder-product">
+              <span class="material-symbols-outlined">local_pizza</span>
+            </div>
+            {pizza.badge && (
+              <span class="product-badge">{pizza.badge}</span>
+            )}
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">{pizza.name}</h3>
+            <p class="product-description">{pizza.description}</p>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-amount">${pizza.price.toLocaleString('es-AR')}</span>
+                <span class="price-info">8 porciones</span>
+              </div>
+              <button 
+                class="btn-add-to-cart" 
+                data-id={pizza.id}
+                data-name={pizza.name}
+                data-price={pizza.price}
+              >
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+                Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .menu-section {
+    background-color: var(--color-surface-container-low);
+  }
+
+  .menu-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .menu-title h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-container-highest);
+    color: var(--color-on-surface-variant);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .product-card {
+    background-color: var(--color-surface-container-lowest);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(49, 47, 38, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 4px 12px rgba(49, 47, 38, 0.1);
+  }
+
+  .product-image {
+    position: relative;
+    height: 16rem;
+    overflow: hidden;
+  }
+
+  .image-placeholder-product {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-dim) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-placeholder-product .material-symbols-outlined {
+    font-size: 5rem;
+    color: var(--color-on-surface-variant);
+    transition: transform 0.5s ease;
+  }
+
+  .product-card:hover .image-placeholder-product .material-symbols-outlined {
+    transform: scale(1.1);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .product-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .product-name {
+    font-size: 1.5rem;
+  }
+
+  .product-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .product-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-amount {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-on-surface);
+  }
+
+  .price-info {
+    font-size: 0.75rem;
+    color: var(--color-on-surface-variant);
+  }
+
+  .btn-add-to-cart {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-surface-container-highest);
+    color: var(--color-on-surface);
+    border: none;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-add-to-cart:hover {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .btn-add-to-cart .material-symbols-outlined {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .menu-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .menu-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

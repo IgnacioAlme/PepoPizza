@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pepo Pizza | La Despensa Artesanal Moderna</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffc69a",
+              "outline": "#7a776b",
+              "on-primary-fixed-variant": "#5f0300",
+              "on-secondary-fixed-variant": "#7c4100",
+              "on-primary-fixed": "#000000",
+              "on-primary": "#ffefed",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#532a00",
+              "tertiary-fixed-dim": "#93c3ef",
+              "on-error-container": "#510017",
+              "on-surface": "#312f26",
+              "surface-bright": "#fcf6e8",
+              "tertiary": "#2c5f87",
+              "on-tertiary-fixed": "#003351",
+              "surface-container-highest": "#e3ddcb",
+              "surface-container-high": "#e8e2d1",
+              "secondary-dim": "#7b4000",
+              "on-secondary": "#fff0e7",
+              "tertiary-container": "#a1d1fe",
+              "on-primary-container": "#4e0200",
+              "error-container": "#f74b6d",
+              "error": "#b41340",
+              "primary-fixed-dim": "#ff5c44",
+              "primary-dim": "#a20a00",
+              "on-error": "#ffefef",
+              "surface-container-low": "#f6f0e1",
+              "primary-container": "#ff7761",
+              "on-surface-variant": "#5f5b51",
+              "surface-dim": "#dad4c2",
+              "surface-container": "#eee8d8",
+              "surface-tint": "#b51a0a",
+              "on-background": "#312f26",
+              "surface-variant": "#e3ddcb",
+              "secondary-fixed-dim": "#ffb375",
+              "surface": "#fcf6e8",
+              "secondary": "#8c4a00",
+              "on-tertiary-fixed-variant": "#1a5177",
+              "tertiary-fixed": "#a1d1fe",
+              "on-tertiary": "#ebf3ff",
+              "error-dim": "#a70138",
+              "secondary-container": "#ffc69a",
+              "primary-fixed": "#ff7761",
+              "inverse-on-surface": "#a19d90",
+              "outline-variant": "#b2ada0",
+              "inverse-primary": "#ff553d",
+              "on-secondary-container": "#6f3a00",
+              "inverse-surface": "#100e07",
+              "background": "#fcf6e8",
+              "primary": "#b51a0a",
+              "on-tertiary-container": "#0a476d",
+              "tertiary-dim": "#1d537a"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-overlay {
+            background: linear-gradient(to top, rgba(49, 47, 38, 0.8) 0%, transparent 60%);
+        }
+        .frosted-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-[#fcf6e8] dark:bg-stone-900 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Logo de Pepo Pizza" class="h-12 w-auto object-contain" data-alt="minimalist and premium logo of Pepo Pizza with artisanal typography and deep red color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjPKSAZS4EV5EeAmBm8xF1oEFNOyjvECqqmm0i-xfoIPks_8EfNi7crOQ9vnio5vX8IFft6R3aWYJodjKY7AYnKeaWCJKws7RDYjn5rzESffQeshXaSRmHRsXaTi19OPTK-Noop0hvgUIYQm5jry8Ll88f8CbZdPrkp89c19NdH0_6rqc-Ba-5jqKUuhZDhI1m1JQbJpv0UrlDSbTr7wHM9wA1HHamQAh3Rga4tQEAkuwkt3izD_Ce_SHiVuoyNNTKPyMNVu1CEohM"/>
+<span class="font-['Epilogue'] text-2xl font-black text-[#b51a0a] dark:text-red-500 italic">Pepo Pizza</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Epilogue'] font-bold text-lg uppercase tracking-tight text-[#b51a0a] dark:text-red-500 border-b-2 border-[#b51a0a] pb-1" href="#">Menú</a>
+<a class="font-['Epilogue'] font-bold text-lg uppercase tracking-tight text-[#5f5b51] dark:text-stone-400 hover:text-[#312f26] dark:hover:text-stone-200 transition-colors" href="#">Nuestra Historia</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#b51a0a] hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section: Editorial Intro -->
+<section class="relative h-[870px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<span class="inline-block py-2 px-4 rounded-full bg-tertiary-container text-on-tertiary-container font-label text-xs font-bold uppercase tracking-widest">
+                        Congelado en su punto máximo
+                    </span>
+<h1 class="font-headline text-6xl md:text-8xl font-black text-on-surface leading-[0.9] tracking-tighter">
+                        La pizza que <span class="text-primary italic">rompe</span> el molde.
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-md">
+                        Artesanía italiana, masa madre y los ingredientes más frescos, congelados para que disfrutes la calidad de un restaurante en tu propia cocina.
+                    </p>
+<div class="flex gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-dim transition-colors shadow-lg shadow-primary/20">
+                            Explorar Menú
+                        </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-bold text-lg hover:opacity-80 transition-opacity">
+                            Nuestra Historia
+                        </button>
+</div>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-full md:w-1/2 h-full opacity-40 md:opacity-100">
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover rounded-l-[3rem] shadow-2xl" data-alt="close-up of a rustic artisan pizza with bubbling mozzarella and fresh basil leaves on a dark wooden board with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_L-_hvren6RIGd4RLVOE3buzfvp4XGKHvC_PYv66rh6Y_aS4D3UwPnw6w_tPkQZx5eSroVKuLtjVuTXHPW0I1zhGJKu4NSpCpKDzH2uGeQLAClCN8KGmZrH6Pavd7-FewM5eORx7eUo2ru7dGgb6fPE1JTeghRs5uCpj6LHZVorS626Ja29-cUyN0MNsToUALq8H4vO4WcWSjqr5Glhven423wAVN4Ukg98GLSQWP81cj4sDInm_1ZFv4Cgb2NiKcJi63e_MPW_dn"/>
+<!-- Overlapping element for organic asymmetry -->
+<div class="absolute -left-12 bottom-24 p-6 frosted-glass rounded-xl shadow-xl hidden md:block max-w-[240px]">
+<p class="font-headline font-bold text-primary italic text-xl">"Como recién salida del horno de leña."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Galería de Sabores Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl font-black text-on-surface mb-6">Galería de Sabores</h2>
+<p class="text-lg text-on-surface-variant">Cada pizza es una obra de arte creada con ingredientes de temporada y procesos lentos.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                        Ver todo el menú <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Editorial Bento Grid for Flavors -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
+<!-- Large Feature: Margarita Clásica -->
+<div class="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="aerial shot of a classic margarita pizza with rich red sauce, fresh white mozzarella rounds and green basil leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2jq8-Gpf_NcwQj70CYi41JQ4vPfoyqhGXWOBQaK1Kf2WBCZ-BmaPDdaOmnF6jLBQr6W4pkyLFk4wEx3lO8T-494QTozTPHXH-qf0R5Wv8UMrhXfXm8Vvjl4FLFq3IH70G6jddXHexzfJOcpzkrBxO4YhbLtP7DOUNjiOkrBYsw2A8TyensrF21CpicBtZrQ0BqNw2Thax51WPRFTRI4xEivq4-zMwpGyafAZApoikWkrnXNudDH3NBfv4tN41AF_nqSVwifHpO0Ww"/>
+<div class="absolute inset-0 editorial-overlay flex flex-col justify-end p-12">
+<span class="text-tertiary-fixed font-bold text-sm uppercase tracking-widest mb-2">Favorito de la Casa</span>
+<h3 class="font-headline text-4xl font-bold text-white mb-4">Margarita Clásica</h3>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 scale-95 active:scale-90 transition-transform">
+                                    Agregar <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+<span class="text-white font-bold text-xl">$12.50</span>
+</div>
+</div>
+</div>
+<!-- Small Feature: Pepperoni Miel -->
+<div class="md:col-span-4 relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="delicious pepperoni pizza with honey drizzle and chili flakes on a marble surface with soft warm highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWhfHv0a3dUbO15wbw-sNze20fq4cT3WT0nM4iU3JnuBvNVwIIkIfGzv_1gdogGSphqeTXQ9TuHsL5oAw-7e5-7JN6xGcYs_82XEZ9Nw80q-MlNX4KPHJw6FRnhLeBFclUTTrbtsSxeIt93Q755jCdvkp5esOtWa3iLIfS6Sh9dPGGsfo38s25aRbSR7w1v2GWpQ9ILVc3_0DMkqUXmuPSqBmM3X_rXp2_B3hIYzO4kB2MEAbIlwrKbIyWBb0BvDub0fr2Q2PsY1vz"/>
+<div class="absolute inset-0 editorial-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl font-bold text-white mb-2">Pepperoni &amp; Miel</h3>
+<button class="text-white/80 font-bold hover:text-white flex items-center gap-1 transition-colors">
+                                Detalles <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Small Feature: Cuatro Quesos -->
+<div class="md:col-span-4 relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="rich four cheese pizza with melted gorgonzola and fontina, garnished with toasted walnuts and honey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOgB7uM382vaD7zIMQgS3BlxCUsfTEdWu1YFpb8jQy85z5ZPLdIOyIPLsTjc0qNE3FRgGBq_TCYElLA7sGGnavli345dlOXLRoUApVJYRy225DJRTmfWfEfLnroTvywwC7E94ko9vJSp-6BRvizCCumr7mCP4luRuo75cuze4R7HfvFd3XZuBBWeJwEqdQh453GdCPtynBhiBcwSjjbgDJj0ik1RN_bMVE60ExoYZyQOg4WhT80fUk2TcmEdxVs14rmWxMNvYSXYvM"/>
+<div class="absolute inset-0 editorial-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl font-bold text-white mb-2">Cuatro Quesos</h3>
+<button class="text-white/80 font-bold hover:text-white flex items-center gap-1 transition-colors">
+                                Detalles <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Owner Section: Detrás de cada Pepo Pizza -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16">
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-primary/20 rounded-xl"></div>
+<img alt="Sergio, dueño de Pepo Pizza" class="relative z-10 w-full h-[600px] object-cover rounded-xl shadow-2xl transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uiNl0qFEgHWWJmbouOAhf0EQ3yB8PvDSsZ7qWD1FzsVp4j9SXOmxm1e4r_FeedlseJNJxiXhIp_VPHNjcJbLW_OUh_HAZ4K8X7tPKyg1P7eJkCwuobOxJ6XRX04YjEp-KU8sj0HYQvRbpJTxG3aOVtd6GBlccpphmRwA6iYCPYB41SWFiH_tE7dPNqtWG4RQmzCn8p0lCPqznixT2KONWWDXb0rSH2Fdte2WPtG9LzYrp4Uhm2Ez0Yf3voPBTAwWukvoduSN_q9rwc"/>
+<div class="absolute -bottom-6 -right-6 z-20 bg-secondary text-on-secondary px-6 py-4 rounded-xl shadow-lg font-headline font-bold italic rotate-3">
+                        Artesanal y Casero
+                    </div>
+</div>
+<div class="space-y-8">
+<span class="text-secondary font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+<span class="w-12 h-[1px] bg-secondary"></span> Conocé al Pizzero
+                    </span>
+<h2 class="font-headline text-5xl font-black text-on-surface">Detrás de cada <span class="text-primary italic">Pepo Pizza</span></h2>
+<div class="space-y-6 text-on-surface-variant text-xl leading-relaxed">
+<p>Hola! 👋 Soy Sergio. Tengo 42 años y decidí apostar por este proyecto con muchas ganas 💪. Me dedico a hacer pizzas congeladas caseras 🍕. Prácticas, ricas y listas en minutos ❄️.</p>
+<p>La idea es simple: que siempre tengas algo rico en tu freezer 🔥. Gracias por apoyar este emprendimiento y gracias por estar del otro lado 🙌❤️.</p>
+<p class="font-medium text-on-surface">Si querés probar, escribime por mensaje directo 📲</p>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.067 2.877 1.215 3.076.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+                            Escribime por WhatsApp
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Values: The "Ice-to-Oven" Experience -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 text-center mb-20">
+<h2 class="font-headline text-4xl font-black text-on-surface">Nuestra Promesa</h2>
+</div>
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+<div class="p-8 rounded-xl bg-surface-container-low text-center space-y-4">
+<span class="material-symbols-outlined text-5xl text-tertiary" data-icon="ac_unit">ac_unit</span>
+<h4 class="font-headline text-xl font-bold">Ultra Congelación</h4>
+<p class="text-on-surface-variant">Congelamos nuestras pizzas a -35°C minutos después de salir del horno para sellar el sabor y la textura.</p>
+</div>
+<div class="p-8 rounded-xl bg-surface-container-low text-center space-y-4">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="local_fire_department">local_fire_department</span>
+<h4 class="font-headline text-xl font-bold">Horno de Piedra</h4>
+<p class="text-on-surface-variant">Precisinadas en hornos de piedra volcánica para ese característico borde crujiente y aireado.</p>
+</div>
+<div class="p-8 rounded-xl bg-surface-container-low text-center space-y-4">
+<span class="material-symbols-outlined text-5xl text-secondary" data-icon="eco">eco</span>
+<h4 class="font-headline text-xl font-bold">Sin Conservantes</h4>
+<p class="text-on-surface-variant">Solo ingredientes reales. El frío es nuestro único conservante natural.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#312f26] dark:bg-black w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-['Epilogue'] text-xl font-bold text-[#fcf6e8]">Pepo Pizza</span>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0]">© 2024 Pepo Pizza. La Despensa Artesanal Moderna.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Menú</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Nuestra Historia</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Carrito</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-[#b2ada0] hover:text-[#b51a0a] transition-colors" href="#">Términos de Servicio</a>
+</div>
+<div class="flex gap-4">
+<button class="p-2 text-[#fcf6e8] opacity-100 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">public</span>
+</button>
+<button class="p-2 text-[#fcf6e8] opacity-100 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">alternate_email</span>
+</button>
+</div>
+</footer>
+</body></html>

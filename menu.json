@@ -1,0 +1,110 @@
+{
+  "business": {
+    "name": "Pepo Pizza",
+    "tagline": "La Despensa Artesanal Moderna",
+    "description": "Artesanía italiana, masa madre y los ingredientes más frescos, congelados para que disfrutes la calidad de un restaurante en tu propia cocina.",
+    "address": "Buenos Aires, Argentina",
+    "hours": "Jue a Dom: 19:00 - 23:30",
+    "whatsapp": "5491123456789",
+    "owner": {
+      "name": "Sergio",
+      "story": "Hola! Soy Sergio. Tengo 42 años y decidí apuesta por este proyecto con muchas ganas. Me dedico a hacer pizzas congeladas caseras. Prácticas, ricas y listas en minutos."
+    }
+  },
+  "categories": [
+    {
+      "id": "pizzas",
+      "label": "Pizzas Artesanales",
+      "items": [
+        {
+          "id": "muzzarella",
+          "name": "Muzzarella",
+          "description": "Nuestra clásica mezcla de muzzarella premium, salsa de tomate natural y orégano fresco.",
+          "price": 8000,
+          "image": "/assets/images/items/muzzarella.webp",
+          "available": true,
+          "badge": "Popular"
+        },
+        {
+          "id": "calabresa",
+          "name": "Calabresa",
+          "description": "Cantimpalo de primera calidad, muzzarella y un toque de ají molido para los valientes.",
+          "price": 8000,
+          "image": "/assets/images/items/calabresa.webp",
+          "available": true
+        },
+        {
+          "id": "jamon-morrones",
+          "name": "Jamón y Morrones",
+          "description": "Jamón cocido natural y morrones asados a la leña. Un clásico que nunca falla.",
+          "price": 8000,
+          "image": "/assets/images/items/jamon-morrones.webp",
+          "available": true
+        },
+        {
+          "id": "cuatro-quesos",
+          "name": "4 Quesos",
+          "description": "Muzzarella, Parmesano, Provolone y un toque de Roquefort. Para amantes del queso.",
+          "price": 8000,
+          "image": "/assets/images/items/cuatro-quesos.webp",
+          "available": true
+        },
+        {
+          "id": "fugazzetta",
+          "name": "Fugazzetta",
+          "description": "Lluvia de cebollas caramelizadas, muzzarella y especias seleccionadas.",
+          "price": 8000,
+          "image": "/assets/images/items/fugazzetta.webp",
+          "available": true
+        },
+        {
+          "id": "carne-desmechada",
+          "name": "Carne Desmechada",
+          "description": "Nuestra especialidad de la casa. Carne braseada por 12 horas y muzzarella.",
+          "price": 8000,
+          "image": "/assets/images/items/carne-desmechada.webp",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "values": [
+    {
+      "icon": "ac_unit",
+      "title": "Ultra Congelación",
+      "description": "Congelamos nuestras pizzas a -35°C minutos después de salir del horno para sellar el sabor y la textura."
+    },
+    {
+      "icon": "local_fire_department",
+      "title": "Horno de Piedra",
+      "description": "Precisionadas en hornos de piedra volcánica para ese característico borde crujiente y aireado."
+    },
+    {
+      "icon": "eco",
+      "title": "Sin Conservantes",
+      "description": "Solo ingredientes reales. El frío es nuestro único conservante natural."
+    }
+  ],
+  "convenience": [
+    {
+      "icon": "kitchen",
+      "title": "Guardala",
+      "description": "Dura hasta 3 meses en tu freezer."
+    },
+    {
+      "icon": "oven_gen",
+      "title": "Horneala",
+      "description": "10-12 minutos a fuego máximo."
+    },
+    {
+      "icon": "timer",
+      "title": "Disfrutala",
+      "description": "Sabor a recién amasada."
+    },
+    {
+      "icon": "groups",
+      "title": "Compartila",
+      "description": "Perfecta para 8 porciones."
+    }
+  ]
+}

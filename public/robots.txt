@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pepopizza.com.ar/sitemap.xml

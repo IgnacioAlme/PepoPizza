@@ -1,0 +1,188 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <span class="material-symbols-outlined">ac_unit</span>
+        Congelado en su punto máximo
+      </span>
+      <h1 class="hero-title">
+        La pizza que <span class="text-highlight">rompe</span> el molde.
+      </h1>
+      <p class="hero-description">
+        Artesanía italiana, masa madre y los ingredientes más frescos, congelados para que disfrutes la calidad de un restaurante en tu propia cocina.
+      </p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">
+          Explorar Menú
+        </a>
+        <a href="#historia" class="btn btn-secondary">
+          Nuestra Historia
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image-wrapper">
+    <div class="hero-image">
+      <!-- Placeholder - would be replaced with actual hero image -->
+      <div class="hero-image-placeholder">
+        <span class="material-symbols-outlined pizza-icon">local_pizza</span>
+      </div>
+    </div>
+    <div class="hero-quote glass-frozen">
+      <p class="quote-text">"Como recién salida del horno de leña."</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-surface);
+  }
+
+  .hero-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 10;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-tertiary-container);
+    color: var(--color-on-tertiary-container);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: fit-content;
+  }
+
+  .hero-badge .material-symbols-outlined {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-on-surface);
+  }
+
+  .text-highlight {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    max-width: 28rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    display: none;
+  }
+
+  .hero-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transform: rotate(2deg);
+    transition: transform 0.5s ease;
+  }
+
+  .hero-image:hover {
+    transform: rotate(0deg);
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dim) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pizza-icon {
+    font-size: 8rem;
+    color: var(--color-on-primary);
+    opacity: 0.5;
+  }
+
+  .hero-quote {
+    position: absolute;
+    bottom: 3rem;
+    left: -3rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    max-width: 15rem;
+    display: none;
+  }
+
+  .quote-text {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-image-wrapper {
+      display: block;
+    }
+
+    .hero-quote {
+      display: block;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

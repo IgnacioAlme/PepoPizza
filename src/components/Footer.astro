@@ -1,0 +1,135 @@
+---
+import menu from '../../menu.json';
+
+const { business } = menu;
+---
+
+<footer class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="brand-name">{business.name}</span>
+      <p class="copyright">© 2024 {business.name}. {business.tagline}.</p>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#historia">Nuestra Historia</a>
+      <a href="#menu">Carrito</a>
+      <a href="#">Términos de Servicio</a>
+    </div>
+    
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook" class="social-link">
+        <span class="material-symbols-outlined">public</span>
+      </a>
+      <a href="#" aria-label="Instagram" class="social-link">
+        <span class="material-symbols-outlined">alternate_email</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Hecho con amor en Buenos Aires</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-on-surface);
+    color: var(--color-surface);
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-name {
+    font-family: var(--font-headline);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-surface);
+  }
+
+  .copyright {
+    font-size: 0.875rem;
+    color: var(--color-outline-variant);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.875rem;
+    color: var(--color-outline-variant);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    color: var(--color-outline-variant);
+    transition: color 0.2s ease;
+  }
+
+  .social-link:hover {
+    color: var(--color-surface);
+  }
+
+  .social-link .material-symbols-outlined {
+    font-size: 1.5rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-bottom p {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-outline-variant);
+    opacity: 0.5;
+  }
+
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-brand {
+      align-items: flex-start;
+    }
+
+    .footer-links {
+      gap: 2rem;
+    }
+  }
+</style>

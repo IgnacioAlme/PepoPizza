@@ -1,0 +1,81 @@
+---
+import menu from '../../menu.json';
+
+const { values } = menu;
+---
+
+<section class="values section">
+  <div class="container">
+    <h2 class="values-title">Nuestra Promesa</h2>
+    
+    <div class="values-grid">
+      {values.map((value) => (
+        <div class="value-card">
+          <span class="value-icon material-symbols-outlined">{value.icon}</span>
+          <h4 class="value-title">{value.title}</h4>
+          <p class="value-description">{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .values {
+    background-color: white;
+  }
+
+  .values-title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .value-card {
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    background-color: var(--color-surface-container-low);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .value-icon {
+    font-size: 3rem;
+  }
+
+  .value-card:first-child .value-icon {
+    color: var(--color-tertiary);
+  }
+
+  .value-card:nth-child(2) .value-icon {
+    color: var(--color-primary);
+  }
+
+  .value-card:nth-child(3) .value-icon {
+    color: var(--color-secondary);
+  }
+
+  .value-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .value-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .values-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

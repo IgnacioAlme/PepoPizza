@@ -1,0 +1,265 @@
+/* Pepo Pizza - Global Styles */
+/* Based on Design System: "The Modern Artisanal Pantry" */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  /* Primary Colors */
+  --color-primary: #b51a0a;
+  --color-primary-dim: #a20a00;
+  --color-primary-container: #ff7761;
+  --color-on-primary: #ffefed;
+  --color-on-primary-container: #4e0200;
+  --color-primary-fixed: #ff7761;
+  --color-primary-fixed-dim: #ff5c44;
+
+  /* Secondary Colors */
+  --color-secondary: #8c4a00;
+  --color-secondary-dim: #7b4000;
+  --color-secondary-container: #ffc69a;
+  --color-on-secondary: #fff0e7;
+  --color-on-secondary-container: #6f3a00;
+  --color-secondary-fixed: #ffc69a;
+  --color-secondary-fixed-dim: #ffb375;
+
+  /* Tertiary Colors (Frost) */
+  --color-tertiary: #2c5f87;
+  --color-tertiary-dim: #1d537a;
+  --color-tertiary-container: #a1d1fe;
+  --color-on-tertiary: #ebf3ff;
+  --color-on-tertiary-container: #0a476d;
+  --color-tertiary-fixed: #a1d1fe;
+  --color-tertiary-fixed-dim: #93c3ef;
+
+  /* Surface Colors */
+  --color-surface: #fcf6e8;
+  --color-surface-bright: #fcf6e8;
+  --color-surface-container: #eee8d8;
+  --color-surface-container-high: #e8e2d1;
+  --color-surface-container-highest: #e3ddcb;
+  --color-surface-container-low: #f6f0e1;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #dad4c2;
+
+  /* Text Colors */
+  --color-on-surface: #312f26;
+  --color-on-surface-variant: #5f5b51;
+  --color-on-background: #312f26;
+
+  /* Other */
+  --color-error: #b41340;
+  --color-error-container: #f74b6d;
+  --color-on-error: #ffefef;
+  --color-on-error-container: #510017;
+  --color-outline: #7a776b;
+  --color-outline-variant: #b2ada0;
+  --color-inverse-surface: #100e07;
+  --color-inverse-on-surface: #a19d90;
+  --color-inverse-primary: #ff553d;
+
+  /* Background */
+  --color-background: #fcf6e8;
+
+  /* Shadows */
+  --shadow-ambient: 0 12px 32px rgba(49, 47, 38, 0.05);
+  --shadow-lg: 0 12px 32px rgba(49, 47, 38, 0.15);
+  --shadow-xl: 0 24px 48px rgba(49, 47, 38, 0.2);
+
+  /* Typography */
+  --font-headline: 'Epilogue', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-on-surface);
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--color-on-surface-variant);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 4px 16px rgba(181, 26, 10, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(181, 26, 10, 0.25);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851;
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass Effect */
+.glass-frozen {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-4xl) 0;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
