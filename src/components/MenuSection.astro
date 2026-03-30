@@ -1,8 +1,14 @@
 ---
 import menu from '../../menu.json';
 
-const { categories } = menu;
+const { categories, variants } = menu;
 const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
+
+// Calculate variant price: 55% of base price, rounded UP to nearest hundred
+function calculateVariantPrice(basePrice: number, multiplier: number): number {
+  const price = basePrice * multiplier;
+  return Math.ceil(price / 100) * 100;
+}
 ---
 
 <section class="menu-section section" id="menu">
@@ -10,11 +16,10 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
     <div class="menu-header">
       <div class="menu-title">
         <h2>Nuestras Variedades</h2>
-        <p>Elegí tu favorita. Todas nuestras pizzas rinden 8 porciones.</p>
+        <p>Elegí tu favorita y la cantidad de porciones.</p>
       </div>
       <div class="menu-tags">
         <span class="tag">Artesanales</span>
-        <span class="tag">8 Porciones</span>
       </div>
     </div>
 
@@ -32,16 +37,31 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
           <div class="product-content">
             <h3 class="product-name">{pizza.name}</h3>
             <p class="product-description">{pizza.description}</p>
+            
+            <!-- Variant Selector -->
+            <div class="variant-selector" data-pizza-id={pizza.id}>
+              {variants.map((variant, index) => (
+                <button 
+                  class={`variant-btn ${index === 0 ? 'active' : ''}`}
+                  data-variant-id={variant.id}
+                  data-variant-label={variant.label}
+                  data-price={calculateVariantPrice(pizza.price, variant.priceMultiplier)}
+                  data-base-price={pizza.price}
+                >
+                  {variant.label}
+                  <span class="variant-price">${calculateVariantPrice(pizza.price, variant.priceMultiplier).toLocaleString('es-AR')}</span>
+                </button>
+              ))}
+            </div>
+            
             <div class="product-footer">
-              <div class="product-price">
-                <span class="price-amount">${pizza.price.toLocaleString('es-AR')}</span>
-                <span class="price-info">8 porciones</span>
-              </div>
               <button 
                 class="btn-add-to-cart" 
                 data-id={pizza.id}
                 data-name={pizza.name}
                 data-price={pizza.price}
+                data-variant="8-porciones"
+                data-variant-label="8 Porciones"
               >
                 <span class="material-symbols-outlined">add_shopping_cart</span>
                 Agregar
@@ -53,6 +73,34 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
     </div>
   </div>
 </section>
+
+<script>
+  // Variant selector logic
+  document.querySelectorAll('.variant-selector').forEach(selector => {
+    const buttons = selector.querySelectorAll('.variant-btn');
+    const pizzaId = selector.getAttribute('data-pizza-id');
+    const addBtn = document.querySelector(`.product-card[data-pizza-id="${pizzaId}"] .btn-add-to-cart`);
+    
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Update add button data
+        if (addBtn) {
+          const variantId = btn.getAttribute('data-variant-id');
+          const variantLabel = btn.getAttribute('data-variant-label');
+          const price = btn.getAttribute('data-price');
+          
+          addBtn.setAttribute('data-variant', variantId || '8-porciones');
+          addBtn.setAttribute('data-variant-label', variantLabel || '8 Porciones');
+          addBtn.setAttribute('data-price', price || '8000');
+        }
+      });
+    });
+  });
+</script>
 
 <style>
   .menu-section {
@@ -142,10 +190,10 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
   }
 
   .product-content {
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .product-name {
@@ -155,30 +203,52 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
   .product-description {
     font-size: 0.875rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+  }
+
+  /* Variant Selector */
+  .variant-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .variant-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background-color: var(--color-surface-container-low);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-on-surface-variant);
+  }
+
+  .variant-btn:hover {
+    background-color: var(--color-surface-container-high);
+  }
+
+  .variant-btn.active {
+    background-color: var(--color-primary-container);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary-container);
+  }
+
+  .variant-price {
+    font-size: 1rem;
+    font-weight: 900;
   }
 
   .product-footer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-  }
-
-  .product-price {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .price-amount {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--color-on-surface);
-  }
-
-  .price-info {
-    font-size: 0.75rem;
-    color: var(--color-on-surface-variant);
+    justify-content: flex-end;
+    margin-top: 0.5rem;
   }
 
   .btn-add-to-cart {

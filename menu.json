@@ -68,6 +68,20 @@
       ]
     }
   ],
+  "variants": [
+    {
+      "id": "8-porciones",
+      "label": "8 Porciones",
+      "portions": 8,
+      "priceMultiplier": 1
+    },
+    {
+      "id": "4-porciones",
+      "label": "4 Porciones",
+      "portions": 4,
+      "priceMultiplier": 0.55
+    }
+  ],
   "values": [
     {
       "icon": "ac_unit",

@@ -57,21 +57,23 @@ const { business } = menu;
   const btnCheckout = document.getElementById('btn-checkout');
   
   // Add to Cart functions
-  window.addToCart = function(id, name, price) {
-    const existingItem = cart.find(item => item.id === id);
+  window.addToCart = function(id, name, price, variant = '8-porciones', variantLabel = '8 Porciones') {
+    // Use id + variant as unique key
+    const itemKey = `${id}-${variant}`;
+    const existingItem = cart.find(item => item.itemKey === itemKey);
     
     if (existingItem) {
       existingItem.quantity++;
     } else {
-      cart.push({ id, name, price, quantity: 1 });
+      cart.push({ id, name, price, variant, variantLabel, quantity: 1, itemKey });
     }
     
     updateCartUI();
   };
   
   // Remove from Cart
-  window.removeFromCart = function(id) {
-    const index = cart.findIndex(item => item.id === id);
+  window.removeFromCart = function(itemKey) {
+    const index = cart.findIndex(item => item.itemKey === itemKey);
     if (index > -1) {
       if (cart[index].quantity > 1) {
         cart[index].quantity--;
@@ -111,9 +113,10 @@ const { business } = menu;
           </div>
           <div class="cart-item-info">
             <p class="cart-item-name">${item.name}</p>
+            <p class="cart-item-variant">${item.variantLabel}</p>
             <p class="cart-item-price">${item.quantity} x $${item.price.toLocaleString('es-AR')}</p>
           </div>
-          <button class="cart-item-remove" onclick="removeFromCart('${item.id}')" aria-label="Eliminar">
+          <button class="cart-item-remove" onclick="removeFromCart('${item.itemKey}')" aria-label="Eliminar">
             <span class="material-symbols-outlined">delete</span>
           </button>
         `;
@@ -156,7 +159,7 @@ const { business } = menu;
     const itemsText = cart.map(item => {
       const emoji = '🍕';
       const subtotal = item.price * item.quantity;
-      return `${emoji} ${item.name} x${item.quantity} — $${subtotal.toLocaleString('es-AR')}`;
+      return `${emoji} ${item.name} (${item.variantLabel}) x${item.quantity} — $${subtotal.toLocaleString('es-AR')}`;
     }).join('\n');
     
     const message = `¡Hola! Quisiera hacer el siguiente pedido:\n\n${itemsText}\n\n💰 *Total: $${total.toLocaleString('es-AR')}*\n\n¿Pueden confirmarlo? ¡Gracias!`;
@@ -177,8 +180,10 @@ const { business } = menu;
       const id = this.dataset.id;
       const name = this.dataset.name;
       const price = parseInt(this.dataset.price);
+      const variant = this.dataset.variant || '8-porciones';
+      const variantLabel = this.dataset.variantLabel || '8 Porciones';
       
-      addToCart(id, name, price);
+      addToCart(id, name, price, variant, variantLabel);
       
       // Show cart briefly
       openCart();
@@ -342,6 +347,12 @@ const { business } = menu;
   .cart-item-name {
     font-weight: 700;
     color: var(--color-on-surface);
+  }
+
+  .cart-item-variant {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
   }
 
   .cart-item-price {
