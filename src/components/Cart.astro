@@ -175,7 +175,7 @@ const { business } = menu;
   });
   
   // Initialize add to cart buttons
-  document.querySelectorAll('.btn-add, .btn-add-to-cart').forEach(btn => {
+  document.querySelectorAll('.btn-add, .btn-add-to-cart, .btn-add-variant').forEach(btn => {
     btn.addEventListener('click', function() {
       const id = this.dataset.id;
       const name = this.dataset.name;
