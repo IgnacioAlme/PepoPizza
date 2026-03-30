@@ -9,9 +9,11 @@ const { business } = menu;
     <div class="owner-grid">
       <div class="owner-image-wrapper">
         <div class="owner-image">
-          <div class="image-placeholder-owner">
-            <span class="material-symbols-outlined">person</span>
-          </div>
+          <img 
+            src="/assets/images/chef.jpg" 
+            alt="Sergio, dueño de Pepo Pizza" 
+            class="owner-img"
+          />
         </div>
         <div class="owner-badge">
           Artesanal y Casero
@@ -75,20 +77,12 @@ const { business } = menu;
     border-radius: var(--radius-xl);
   }
 
-  .image-placeholder-owner {
+  .owner-img {
     width: 100%;
     height: 600px;
-    background: linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-dim) 100%);
+    object-fit: cover;
     border-radius: var(--radius-xl);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: var(--shadow-xl);
-  }
-
-  .image-placeholder-owner .material-symbols-outlined {
-    font-size: 8rem;
-    color: var(--color-on-surface-variant);
   }
 
   .owner-badge {
