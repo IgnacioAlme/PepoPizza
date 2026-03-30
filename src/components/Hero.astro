@@ -26,10 +26,11 @@
   </div>
   <div class="hero-image-wrapper">
     <div class="hero-image">
-      <!-- Placeholder - would be replaced with actual hero image -->
-      <div class="hero-image-placeholder">
-        <span class="material-symbols-outlined pizza-icon">local_pizza</span>
-      </div>
+      <img 
+        src="/assets/images/hero-placeholder.jpg" 
+        alt="Pepo Pizza - Las mejores pizzas congeladas" 
+        class="hero-img"
+      />
     </div>
     <div class="hero-quote glass-frozen">
       <p class="quote-text">"Como recién salida del horno de leña."</p>
@@ -128,19 +129,10 @@
     transform: rotate(0deg);
   }
 
-  .hero-image-placeholder {
+  .hero-img {
     width: 100%;
     height: 500px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dim) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .pizza-icon {
-    font-size: 8rem;
-    color: var(--color-on-primary);
-    opacity: 0.5;
+    object-fit: cover;
   }
 
   .hero-quote {
