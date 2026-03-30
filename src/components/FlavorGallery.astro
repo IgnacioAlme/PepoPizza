@@ -5,14 +5,14 @@ const { categories } = menu;
 const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
 ---
 
-<section class="flavors section" id="menu">
+<section class="flavors section">
   <div class="container">
     <div class="flavors-header">
       <div class="flavors-title">
         <h2>Galería de Sabores</h2>
         <p>Cada pizza es una obra de arte creada con ingredientes de temporada y procesos lentos.</p>
       </div>
-      <a href="#menu" class="flavors-link">
+      <a href="/menu" class="flavors-link">
         Ver todo el menú
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>

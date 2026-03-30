@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MenuSection from '../components/MenuSection.astro';
+import Convenience from '../components/Convenience.astro';
+import Cart from '../components/Cart.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Menú | Pepo Pizza">
+  <Navbar />
+  <main>
+    <!-- Simple Menu Hero -->
+    <section class="menu-hero">
+      <div class="container">
+        <span class="menu-badge">
+          <span class="material-symbols-outlined">ac_unit</span>
+          Congeladas en su punto
+        </span>
+        <h1>Las Mejores Pizzas <span class="text-highlight">Congeladas</span></h1>
+        <p>Levamos el sabor de la pizzería artesanal directo a tu freezer. Calidad premium, ingredientes frescos y lista en 10 minutos.</p>
+        <div class="menu-cta">
+          <a href="#menu" class="btn btn-primary">
+            Ver el Menú
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <div class="shipping-info">
+            <span class="material-symbols-outlined">local_shipping</span>
+            <span>Envío a domicilio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <MenuSection />
+    <Convenience />
+  </main>
+  <Cart />
+  <Footer />
+</Layout>
+
+<style>
+  .menu-hero {
+    padding: 3rem 1.5rem 6rem;
+    background: linear-gradient(to bottom, var(--color-surface) 0%, var(--color-primary-container) 100%);
+  }
+
+  .menu-hero .container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .menu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-tertiary-container);
+    color: var(--color-on-tertiary-container);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .text-highlight {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  .menu-hero p {
+    font-size: 1.25rem;
+    max-width: 36rem;
+    margin-bottom: 2rem;
+    color: var(--color-on-surface-variant);
+  }
+
+  .menu-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .shipping-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+  }
+
+  .shipping-info .material-symbols-outlined {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .menu-hero {
+      padding: 4rem 1.5rem 8rem;
+    }
+  }
+</style>
