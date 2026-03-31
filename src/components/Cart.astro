@@ -198,11 +198,11 @@ const { business } = menu;
   /* Floating Cart Button */
   .cart-floating {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0rem));
+    right: calc(1rem + env(safe-area-inset-right, 0rem));
     z-index: 40;
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     background-color: var(--color-on-surface);
     color: var(--color-surface-container-lowest);
@@ -215,6 +215,15 @@ const { business } = menu;
     transition: all 0.2s ease;
   }
 
+  @media (min-width: 768px) {
+    .cart-floating {
+      bottom: 2rem;
+      right: 2rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
   .cart-floating:hover {
     background-color: var(--color-primary);
     transform: scale(1.05);
@@ -225,7 +234,13 @@ const { business } = menu;
   }
 
   .cart-floating .material-symbols-outlined {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .cart-floating .material-symbols-outlined {
+      font-size: 1.75rem;
+    }
   }
 
   .cart-count {

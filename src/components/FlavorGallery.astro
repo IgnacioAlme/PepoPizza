@@ -145,6 +145,38 @@ const carouselItems = pizzas.map((pizza, index) => ({
   carouselWrapper?.addEventListener('mouseenter', stopAutoplay);
   carouselWrapper?.addEventListener('mouseleave', startAutoplay);
 
+  // Touch/Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const carousel = document.getElementById('flavor-carousel');
+
+  carousel?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoplay();
+  }, { passive: true });
+
+  carousel?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    startAutoplay();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+      } else {
+        // Swipe right - previous slide
+        prevSlide();
+      }
+    }
+  }
+
   // Initialize
   goToSlide(0);
   startAutoplay();
@@ -283,38 +315,44 @@ const carouselItems = pizzas.map((pizza, index) => ({
 
   /* Navigation Arrows */
   .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: var(--color-surface-container-lowest);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.2s ease;
-    z-index: 10;
-  }
-
-  .carousel-arrow:hover {
-    background-color: var(--color-primary);
-    color: white;
-  }
-
-  .carousel-arrow.prev {
-    left: -1.5rem;
-  }
-
-  .carousel-arrow.next {
-    right: -1.5rem;
+    display: none;
   }
 
   .carousel-arrow .material-symbols-outlined {
     font-size: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: var(--color-surface-container-lowest);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .carousel-arrow:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    .carousel-arrow.prev {
+      left: -1.5rem;
+    }
+
+    .carousel-arrow.next {
+      right: -1.5rem;
+    }
   }
 
   /* Dots */
