@@ -57,7 +57,7 @@ const { business } = menu;
   const btnCheckout = document.getElementById('btn-checkout');
   
   // Add to Cart functions
-  window.addToCart = function(id, name, price, variant = '8-porciones', variantLabel = '8 Porciones') {
+  window.addToCart = function(id, name, price, variant = '8-porciones', variantLabel = '8') {
     // Use id + variant as unique key
     const itemKey = `${id}-${variant}`;
     const existingItem = cart.find(item => item.itemKey === itemKey);
@@ -181,7 +181,7 @@ const { business } = menu;
       const name = this.dataset.name;
       const price = parseInt(this.dataset.price);
       const variant = this.dataset.variant || '8-porciones';
-      const variantLabel = this.dataset.variantLabel || '8 Porciones';
+      const variantLabel = this.dataset.variantLabel || '8';
       
       addToCart(id, name, price, variant, variantLabel);
       

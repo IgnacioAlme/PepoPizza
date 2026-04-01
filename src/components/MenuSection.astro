@@ -18,7 +18,11 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
         <h2>Nuestras Variedades</h2>
         <p>Elegí tu favorita y la cantidad de porciones.</p>
       </div>
-      <div class="menu-tags">
+      <div class="menu-actions">
+        <a href="/instrucciones" class="btn-instructions">
+          <span class="material-symbols-outlined">help</span>
+          Cómo prepararla
+        </a>
         <span class="tag">Artesanales</span>
       </div>
     </div>
@@ -47,9 +51,9 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
                   data-name={pizza.name}
                   data-price={calculateVariantPrice(pizza.price, variant.priceMultiplier)}
                   data-variant={variant.id}
-                  data-variant-label={variant.label}
+                  data-variant-label={String(variant.portions)}
                 >
-                  <span class="variant-label">{variant.label}</span>
+                  <span class="variant-label"><strong>{variant.portions}</strong><span class="material-symbols-outlined variant-icon">local_pizza</span></span>
                   <span class="variant-price">${calculateVariantPrice(pizza.price, variant.priceMultiplier).toLocaleString('es-AR')}</span>
                 </button>
               ))}
@@ -77,9 +81,33 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
     margin-bottom: 0.5rem;
   }
 
-  .menu-tags {
+  .menu-actions {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+  }
+
+  .btn-instructions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-instructions:hover {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .btn-instructions .material-symbols-outlined {
+    font-size: 1.25rem;
   }
 
   .tag {
@@ -195,7 +223,14 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
   }
 
   .btn-add-variant .variant-label {
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .btn-add-variant .variant-icon {
+    font-size: 1.1em;
+    line-height: 1;
   }
 
   .btn-add-variant .variant-price {

@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Instrucciones | Pepo Pizza">
+  <Navbar currentPage="instrucciones" />
+  <main>
+    <section class="instructions-hero">
+      <div class="container">
+        <span class="hero-badge">
+          <span class="material-symbols-outlined">help</span>
+          Guía de Preparación
+        </span>
+        <h1>Cómo preparar tu <span class="text-highlight">Pepo Pizza</span></h1>
+        <p class="hero-subtitle">Seguí estos simples pasos para disfrutar de una pizza perfecta, como recién horneada.</p>
+      </div>
+    </section>
+
+    <section class="instructions-content">
+      <div class="container">
+        <!-- Storage Section -->
+        <div class="instruction-card">
+          <div class="instruction-icon">
+            <span class="material-symbols-outlined">ac_unit</span>
+          </div>
+          <div class="instruction-text">
+            <h2>Conservación</h2>
+            <div class="instruction-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <h3>Freezer</h3>
+                  <p>Guardá la pizza en el freezer hasta por 3 meses. Mantenela siempre congelada para preservar su frescura.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <h3>Refrigerador</h3>
+                  <p>Si la vas a consumir en los próximos 2-3 días, podés guardarla en la heladera. Pero recordá: el freezer es mejor.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <h3>Mantener el empaque</h3>
+                  <p>Conservá la pizza en su empaque original o en una bolsa hermética para evitar quemaduras por congelación.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cooking Section -->
+        <div class="instruction-card">
+          <div class="instruction-icon">
+            <span class="material-symbols-outlined">local_fire_department</span>
+          </div>
+          <div class="instruction-text">
+            <h2>Preparación</h2>
+            <div class="instruction-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <h3>Precalentá el horno</h3>
+                  <p>Encendé el horno a temperatura máxima (250°C - 280°C). Dejá que se precaliente bien durante al menos 10 minutos.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <h3>Prepará la pizza</h3>
+                  <p>Sacá la pizza del freezer y quitá el empaque. No necesitas descongelarla ni agregarle aceite.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <h3>Horneá</h3>
+                  <p>Colocá la pizza directamente sobre la rejilla del horno (o en una piedra para pizza). Horneá entre 8-12 minutos hasta que el borde esté dorado y crocante.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                  <h3>Dejá reposar</h3>
+                  <p>Sacá del horno y dejá reposar 1-2 minutos antes de cortar. ¡Esto permite que los ingredientes se asienten!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro Tips -->
+        <div class="tips-card">
+          <div class="tips-header">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <h2>Consejos del Chef</h2>
+          </div>
+          <ul class="tips-list">
+            <li>
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>Para una masa más crocante, rocjá un poco de agua en el fondo del horno antes de hornear.</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>Si usás pizzera de piedra, precalentá la piedra junto con el horno.</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>No tapes la pizza mientras se hornea — el vapor hace la masa blanda.</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>¿Microondas? Solo en emergencia. Queda mucho mejor en horno convencional.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .instructions-hero {
+    padding: 3rem 1.5rem 4rem;
+    background: linear-gradient(to bottom, var(--color-surface) 0%, var(--color-primary-container) 100%);
+    text-align: center;
+  }
+
+  .instructions-hero .container {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-tertiary-container);
+    color: var(--color-on-tertiary-container);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge .material-symbols-outlined {
+    font-size: 1.25rem;
+  }
+
+  .instructions-hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .text-highlight {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-on-surface-variant);
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .instructions-content {
+    padding: 4rem 1.5rem;
+  }
+
+  .instructions-content .container {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .instruction-card {
+    background-color: var(--color-surface-container-lowest);
+    border-radius: var(--radius-2xl);
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(49, 47, 38, 0.05);
+  }
+
+  .instruction-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary-container);
+    margin-bottom: 1.5rem;
+  }
+
+  .instruction-icon .material-symbols-outlined {
+    font-size: 2rem;
+    color: var(--color-on-primary-container);
+  }
+
+  .instruction-text h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .instruction-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .step-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-content p {
+    font-size: 0.9375rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.5;
+  }
+
+  .tips-card {
+    background-color: var(--color-surface-container-high);
+    border-radius: var(--radius-2xl);
+    padding: 2rem;
+  }
+
+  .tips-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tips-header .material-symbols-outlined {
+    font-size: 1.5rem;
+    color: var(--color-tertiary);
+  }
+
+  .tips-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .tips-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tips-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .tips-list .material-symbols-outlined {
+    font-size: 1.25rem;
+    color: var(--color-tertiary);
+    margin-top: 0.125rem;
+  }
+
+  .tips-list span:last-child {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .instructions-hero {
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .instructions-content {
+      padding: 5rem 1.5rem;
+    }
+
+    .instruction-card {
+      padding: 2.5rem;
+    }
+  }
+</style>

@@ -71,13 +71,13 @@
   "variants": [
     {
       "id": "8-porciones",
-      "label": "8 Porciones",
+      "label": "8",
       "portions": 8,
       "priceMultiplier": 1
     },
     {
       "id": "4-porciones",
-      "label": "4 Porciones",
+      "label": "4",
       "portions": 4,
       "priceMultiplier": 0.55
     }

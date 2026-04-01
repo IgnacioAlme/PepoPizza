@@ -19,6 +19,7 @@ const { currentPage = 'home' } = Astro.props;
       <nav class="navbar-nav desktop-only">
         <a href="/" class={`nav-link ${currentPage === 'home' ? 'active' : ''}`}>Inicio</a>
         <a href="/menu" class={`nav-link ${currentPage === 'menu' ? 'active' : ''}`}>Menú</a>
+        <a href="/instrucciones" class={`nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>Instrucciones</a>
       </nav>
     </div>
     <div class="navbar-actions">
@@ -45,6 +46,10 @@ const { currentPage = 'home' } = Astro.props;
     <a href="/menu" class={`mobile-nav-link ${currentPage === 'menu' ? 'active' : ''}`}>
       <span class="material-symbols-outlined">restaurant_menu</span>
       Menú
+    </a>
+    <a href="/instrucciones" class={`mobile-nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>
+      <span class="material-symbols-outlined">info</span>
+      Instrucciones
     </a>
   </nav>
 </div>
