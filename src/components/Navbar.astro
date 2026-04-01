@@ -13,13 +13,13 @@ const { currentPage = 'home' } = Astro.props;
 <header class="navbar">
   <div class="navbar-container">
     <div class="navbar-brand">
-      <a href="/" class="brand-link">
+      <a href="/PepoPizza/" class="brand-link">
         <img src="/PepoPizza/assets/images/logo.webp" alt="{business.name}" class="brand-logo" />
       </a>
       <nav class="navbar-nav desktop-only">
-        <a href="/" class={`nav-link ${currentPage === 'home' ? 'active' : ''}`}>Inicio</a>
-        <a href="/menu" class={`nav-link ${currentPage === 'menu' ? 'active' : ''}`}>Menú</a>
-        <a href="/instrucciones" class={`nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>Instrucciones</a>
+        <a href="/PepoPizza/" class={`nav-link ${currentPage === 'home' ? 'active' : ''}`}>Inicio</a>
+        <a href="/PepoPizza/menu" class={`nav-link ${currentPage === 'menu' ? 'active' : ''}`}>Menú</a>
+        <a href="/PepoPizza/instrucciones" class={`nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>Instrucciones</a>
       </nav>
     </div>
     <div class="navbar-actions">
@@ -39,15 +39,15 @@ const { currentPage = 'home' } = Astro.props;
     </button>
   </div>
   <nav class="mobile-nav">
-    <a href="/" class={`mobile-nav-link ${currentPage === 'home' ? 'active' : ''}`}>
+    <a href="/PepoPizza/" class={`mobile-nav-link ${currentPage === 'home' ? 'active' : ''}`}>
       <span class="material-symbols-outlined">home</span>
       Inicio
     </a>
-    <a href="/menu" class={`mobile-nav-link ${currentPage === 'menu' ? 'active' : ''}`}>
+    <a href="/PepoPizza/menu" class={`mobile-nav-link ${currentPage === 'menu' ? 'active' : ''}`}>
       <span class="material-symbols-outlined">restaurant_menu</span>
       Menú
     </a>
-    <a href="/instrucciones" class={`mobile-nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>
+    <a href="/PepoPizza/instrucciones" class={`mobile-nav-link ${currentPage === 'instrucciones' ? 'active' : ''}`}>
       <span class="material-symbols-outlined">info</span>
       Instrucciones
     </a>
