@@ -8,7 +8,7 @@
     "whatsapp": "5491123456789",
     "owner": {
       "name": "Sergio",
-      "story": "Hola! Soy Sergio. Tengo 42 años y decidí apuesta por este proyecto con muchas ganas. Me dedico a hacer pizzas congeladas caseras. Prácticas, ricas y listas en minutos."
+      "story": "Hola! Soy Sergio. Tengo 42 años y decidí aposta por este proyecto con muchas ganas. Me dedico a hacer pizzas congeladas caseras. Prácticas, ricas y listas en minutos."
     }
   },
   "categories": [
@@ -19,7 +19,8 @@
         {
           "id": "muzzarella",
           "name": "Muzzarella",
-          "description": "Nuestra clásica mezcla de muzzarella premium, salsa de tomate natural y orégano fresco.",
+          "description": "Salsa de tomate, queso muzzarella.",
+          "ingredients": ["salsa de tomate", "queso muzzarella"],
           "price": 8000,
           "image": "/assets/images/items/muzzarella.webp",
           "available": true,
@@ -28,7 +29,8 @@
         {
           "id": "calabresa",
           "name": "Calabresa",
-          "description": "Cantimpalo de primera calidad, muzzarella y un toque de ají molido para los valientes.",
+          "description": "Salsa de tomate, queso muzzarella, calabresa.",
+          "ingredients": ["salsa de tomate", "queso muzzarella", "calabresa"],
           "price": 8000,
           "image": "/assets/images/items/calabresa.webp",
           "available": true
@@ -36,7 +38,8 @@
         {
           "id": "jamon-morrones",
           "name": "Jamón y Morrones",
-          "description": "Jamón cocido natural y morrones asados a la leña. Un clásico que nunca falla.",
+          "description": "Salsa de tomate, queso muzzarella, jamón y morrón.",
+          "ingredients": ["salsa de tomate", "queso muzzarella", "jamón", "morrón"],
           "price": 8000,
           "image": "/assets/images/items/jamon-morrones.webp",
           "available": true
@@ -44,7 +47,8 @@
         {
           "id": "cuatro-quesos",
           "name": "4 Quesos",
-          "description": "Muzzarella, Parmesano, Provolone y un toque de Roquefort. Para amantes del queso.",
+          "description": "Salsa de tomate, queso muzzarella, queso roquefort, queso cheddar, queso parmesano.",
+          "ingredients": ["salsa de tomate", "queso muzzarella", "queso roquefort", "queso cheddar", "queso parmesano"],
           "price": 8000,
           "image": "/assets/images/items/cuatro-quesos.webp",
           "available": true
@@ -52,17 +56,34 @@
         {
           "id": "fugazzetta",
           "name": "Fugazzetta",
-          "description": "Lluvia de cebollas caramelizadas, muzzarella y especias seleccionadas.",
+          "description": "Salsa de tomate, queso muzzarella, cebolla rehogada.",
+          "ingredients": ["salsa de tomate", "queso muzzarella", "cebolla rehogada"],
           "price": 8000,
           "image": "/assets/images/items/fugazzetta.webp",
           "available": true
-        },
+        }
+      ]
+    },
+    {
+      "id": "especialidades",
+      "label": "Especialidad de la Casa",
+      "items": [
         {
           "id": "carne-desmechada",
           "name": "Carne Desmechada",
-          "description": "Nuestra especialidad de la casa. Carne braseada por 12 horas y muzzarella.",
+          "description": "Salsa de tomate, queso muzzarella, carne desmechada.",
+          "ingredients": ["salsa de tomate", "queso muzzarella", "carne desmechada"],
           "price": 8000,
           "image": "/assets/images/items/carne-desmechada.webp",
+          "available": true
+        },
+        {
+          "id": "pizza-pepo",
+          "name": "Pizza Pepo",
+          "description": "Queso crema, queso muzzarella, cebolla de verdeo.",
+          "ingredients": ["queso crema", "queso muzzarella", "cebolla de verdeo"],
+          "price": 8000,
+          "image": "/assets/images/items/pizza-pepo.webp",
           "available": true
         }
       ]

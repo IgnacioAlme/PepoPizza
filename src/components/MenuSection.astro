@@ -2,7 +2,6 @@
 import menu from '../../menu.json';
 
 const { categories, variants } = menu;
-const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
 
 // Calculate variant price: 55% of base price, rounded UP to nearest hundred
 function calculateVariantPrice(basePrice: number, multiplier: number): number {
@@ -27,41 +26,51 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
       </div>
     </div>
 
-    <div class="menu-grid">
-      {pizzas.map((pizza) => (
-        <div class="product-card">
-          <div class="product-image">
-            <div class="image-placeholder-product">
-              <span class="material-symbols-outlined">local_pizza</span>
+    {categories.map((category) => (
+      <div class="menu-category">
+        <h3 class="category-title">{category.label}</h3>
+        <div class="menu-grid">
+          {category.items.map((pizza) => (
+            <div class="product-card">
+              <div class="product-image">
+                <div class="image-placeholder-product">
+                  <span class="material-symbols-outlined">local_pizza</span>
+                </div>
+                {pizza.badge && (
+                  <span class="product-badge">{pizza.badge}</span>
+                )}
+              </div>
+              <div class="product-content">
+                <h3 class="product-name">{pizza.name}</h3>
+                
+                {pizza.ingredients && (
+                  <div class="product-ingredients">
+                    {pizza.ingredients.join(', ')}
+                  </div>
+                )}
+                
+                <!-- Variant Buttons -->
+                <div class="variant-buttons">
+                  {variants.map((variant) => (
+                    <button 
+                      class="btn-add-variant" 
+                      data-id={pizza.id}
+                      data-name={pizza.name}
+                      data-price={calculateVariantPrice(pizza.price, variant.priceMultiplier)}
+                      data-variant={variant.id}
+                      data-variant-label={String(variant.portions)}
+                    >
+                      <span class="variant-label"><strong>{variant.portions}</strong><span class="material-symbols-outlined variant-icon">local_pizza</span></span>
+                      <span class="variant-price">${calculateVariantPrice(pizza.price, variant.priceMultiplier).toLocaleString('es-AR')}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-            {pizza.badge && (
-              <span class="product-badge">{pizza.badge}</span>
-            )}
-          </div>
-          <div class="product-content">
-            <h3 class="product-name">{pizza.name}</h3>
-            <p class="product-description">{pizza.description}</p>
-            
-            <!-- Variant Buttons -->
-            <div class="variant-buttons">
-              {variants.map((variant) => (
-                <button 
-                  class="btn-add-variant" 
-                  data-id={pizza.id}
-                  data-name={pizza.name}
-                  data-price={calculateVariantPrice(pizza.price, variant.priceMultiplier)}
-                  data-variant={variant.id}
-                  data-variant-label={String(variant.portions)}
-                >
-                  <span class="variant-label"><strong>{variant.portions}</strong><span class="material-symbols-outlined variant-icon">local_pizza</span></span>
-                  <span class="variant-price">${calculateVariantPrice(pizza.price, variant.priceMultiplier).toLocaleString('es-AR')}</span>
-                </button>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </section>
 
@@ -117,6 +126,17 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
     color: var(--color-on-surface-variant);
     font-size: 0.875rem;
     font-weight: 500;
+  }
+
+  .menu-category {
+    margin-bottom: 3rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
   }
 
   .menu-grid {
@@ -187,9 +207,10 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
     font-size: 1.5rem;
   }
 
-  .product-description {
-    font-size: 0.875rem;
-    line-height: 1.5;
+  .product-ingredients {
+    font-size: 0.8125rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.4;
   }
 
   /* Variant Buttons */
