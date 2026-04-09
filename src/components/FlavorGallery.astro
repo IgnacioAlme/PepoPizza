@@ -4,11 +4,19 @@ import menu from '../../menu.json';
 const { categories } = menu;
 const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
 
-// Create carousel items from pizzas
-const carouselItems = pizzas.map((pizza, index) => ({
-  ...pizza,
-  badge: index === 0 ? 'Favorito de la Casa' : null
-}));
+const carouselItems = [
+  {
+    type: 'video',
+    badge: 'Nuestras Pizzas',
+    src: 'assets/videos/showcase.mp4'
+  },
+  {
+    type: 'image',
+    imageSrc: 'assets/images/showcase-large.webp',
+    ctaText: 'Probá nuestras pizzas',
+    link: '/PepoPizza/menu'
+  }
+];
 ---
 
 <section class="flavors section">
@@ -30,20 +38,40 @@ const carouselItems = pizzas.map((pizza, index) => ({
         <div class="carousel-track" id="carousel-track">
           {carouselItems.map((item, index) => (
             <div class="carousel-slide" data-index={index}>
-              <div class="slide-image">
-                <div class="image-placeholder">
-                  <span class="material-symbols-outlined">local_pizza</span>
+              {item.type === 'video' ? (
+                <div class="slide-media">
+                  <video 
+                    src={item.src} 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    class="slide-video"
+                  ></video>
                 </div>
-              </div>
+              ) : (
+                <div class="slide-media">
+                  <img 
+                    src={item.imageSrc}
+                    alt="Nuestras pizzas"
+                    class="slide-img"
+                    loading="lazy"
+                  />
+                </div>
+              )}
               <div class="slide-overlay">
                 {item.badge && (
                   <span class="slide-badge">{item.badge}</span>
                 )}
-                <h3 class="slide-name">{item.name}</h3>
-                <a href="/PepoPizza/menu" class="slide-link">
-                  Ver en el menú
-                  <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
+                {item.ctaText && (
+                  <>
+                    <h3 class="slide-text">{item.ctaText}</h3>
+                    <a href={item.link} class="slide-link">
+                      Ver en el menú
+                      <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           ))}
@@ -240,24 +268,22 @@ const carouselItems = pizzas.map((pizza, index) => ({
     aspect-ratio: 480 / 650;
   }
 
-  .slide-image {
+  .slide-media {
     position: absolute;
     inset: 0;
   }
 
-  .image-placeholder {
+  .slide-video,
+  .slide-img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-dim) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
   }
 
-  .image-placeholder .material-symbols-outlined {
-    font-size: 8rem;
-    color: var(--color-on-surface-variant);
-    opacity: 0.4;
+  .slide-text {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .slide-overlay {
@@ -282,12 +308,6 @@ const carouselItems = pizzas.map((pizza, index) => ({
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-  }
-
-  .slide-name {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
   }
 
   .slide-link {

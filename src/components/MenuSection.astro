@@ -33,9 +33,12 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
           {category.items.map((pizza) => (
             <div class="product-card">
               <div class="product-image">
-                <div class="image-placeholder-product">
-                  <span class="material-symbols-outlined">local_pizza</span>
-                </div>
+                <img 
+                  src={`/PepoPizza${pizza.image}`}
+                  alt={pizza.name}
+                  class="product-img"
+                  loading="lazy"
+                />
                 {pizza.badge && (
                   <span class="product-badge">{pizza.badge}</span>
                 )}
@@ -161,25 +164,18 @@ function calculateVariantPrice(basePrice: number, multiplier: number): number {
     position: relative;
     height: 16rem;
     overflow: hidden;
+    background: linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-dim) 100%);
   }
 
-  .image-placeholder-product {
+  .product-img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-dim) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .image-placeholder-product .material-symbols-outlined {
-    font-size: 5rem;
-    color: var(--color-on-surface-variant);
+    object-fit: cover;
     transition: transform 0.5s ease;
   }
 
-  .product-card:hover .image-placeholder-product .material-symbols-outlined {
-    transform: scale(1.1);
+  .product-card:hover .product-img {
+    transform: scale(1.05);
   }
 
   .product-badge {
