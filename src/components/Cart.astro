@@ -42,8 +42,18 @@ const { business } = menu;
 <div class="cart-backdrop" id="cart-backdrop"></div>
 
 <script define:vars={{ business }}>
-  // Cart State
+  // Cart State - persist in sessionStorage while tab is open
   let cart = [];
+
+  // Load cart from sessionStorage on page load
+  try {
+    const savedCart = sessionStorage.getItem('pepocart');
+    if (savedCart) {
+      cart = JSON.parse(savedCart);
+    }
+  } catch (e) {
+    cart = [];
+  }
   
   // DOM Elements
   const cartFloating = document.getElementById('cart-floating');
@@ -86,6 +96,13 @@ const { business } = menu;
   
   // Update Cart UI
   function updateCartUI() {
+    // Save to sessionStorage
+    try {
+      sessionStorage.setItem('pepocart', JSON.stringify(cart));
+    } catch (e) {
+      // Ignore storage errors
+    }
+    
     // Update count badge
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;

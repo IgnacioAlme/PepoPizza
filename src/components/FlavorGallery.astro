@@ -14,7 +14,7 @@ const carouselItems = [
     type: 'image',
     imageSrc: 'assets/images/showcase-large.webp',
     ctaText: 'Probá nuestras pizzas',
-    link: '/PepoPizza/menu'
+    link: '/PepoPizza/menu/'
   }
 ];
 ---
@@ -26,7 +26,7 @@ const carouselItems = [
         <h2>Galería de Sabores</h2>
         <p>Cada pizza es una obra de arte creada con ingredientes de temporada y procesos lentos.</p>
       </div>
-      <a href="/PepoPizza/menu" class="flavors-link">
+      <a href="/PepoPizza/menu/" class="flavors-link">
         Ver todo el menú
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
@@ -401,6 +401,33 @@ const carouselItems = [
 
   .carousel-dot:hover:not(.active) {
     background-color: var(--color-outline);
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 480px) {
+    .carousel-wrapper {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    .carousel-slide {
+      aspect-ratio: 3 / 4;
+    }
+
+    .slide-overlay {
+      padding: 1.5rem;
+    }
+
+    .slide-text {
+      font-size: 1.5rem;
+    }
+
+    .slide-badge {
+      top: 1rem;
+      left: 1rem;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.625rem;
+    }
   }
 
   @media (min-width: 768px) {
