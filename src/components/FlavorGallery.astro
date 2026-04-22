@@ -6,15 +6,16 @@ const pizzas = categories.find(c => c.id === 'pizzas')?.items || [];
 
 const carouselItems = [
   {
-    type: 'video',
-    badge: 'Nuestras Pizzas',
-    src: 'assets/videos/showcase.mp4'
-  },
-  {
     type: 'image',
-    imageSrc: 'assets/images/showcase-large.webp',
+    badge: 'Nuestras Pizzas',
+    imageSrc: '/PepoPizza/assets/images/showcase-large.webp',
     ctaText: 'Probá nuestras pizzas',
     link: '/PepoPizza/menu/'
+  },
+  {
+    type: 'video',
+    badge: 'En Acción',
+    src: '/PepoPizza/assets/videos/output.webm'
   }
 ];
 ---
@@ -38,8 +39,8 @@ const carouselItems = [
         <div class="carousel-track" id="carousel-track">
           {carouselItems.map((item, index) => (
             <div class="carousel-slide" data-index={index}>
-              {item.type === 'video' ? (
-                <div class="slide-media">
+              <div class="slide-media">
+                {item.type === 'video' ? (
                   <video 
                     src={item.src} 
                     autoplay 
@@ -48,17 +49,17 @@ const carouselItems = [
                     playsinline
                     class="slide-video"
                   ></video>
-                </div>
-              ) : (
-                <div class="slide-media">
+                ) : (
                   <img 
                     src={item.imageSrc}
                     alt="Nuestras pizzas"
                     class="slide-img"
                     loading="lazy"
+                    width="520"
+                    height="650"
                   />
-                </div>
-              )}
+                )}
+              </div>
               <div class="slide-overlay">
                 {item.badge && (
                   <span class="slide-badge">{item.badge}</span>
