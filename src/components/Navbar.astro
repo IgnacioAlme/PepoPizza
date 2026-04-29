@@ -57,7 +57,7 @@ const { currentPage = 'home' } = Astro.props;
 <!-- Mobile Menu Backdrop -->
 <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
 
-<script>
+<script type="module">
   const hamburgerBtn = document.getElementById('hamburger-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -232,7 +232,10 @@ const { currentPage = 'home' } = Astro.props;
     box-shadow: var(--shadow-xl);
     z-index: 60;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    /* GPU acceleration hint for smooth animation */
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
   }
@@ -311,7 +314,9 @@ const { currentPage = 'home' } = Astro.props;
     z-index: 55;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    /* Optimize for mobile: use transform instead of opacity for cheaper compositing */
+    will-change: opacity;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .mobile-menu-backdrop.open {

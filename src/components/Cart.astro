@@ -41,7 +41,7 @@ const { business } = menu;
 <!-- Cart Backdrop -->
 <div class="cart-backdrop" id="cart-backdrop"></div>
 
-<script define:vars={{ business }}>
+<script define:vars={{ business }} type="module">
   // Cart State - persist in sessionStorage while tab is open
   let cart = [];
 
@@ -290,7 +290,10 @@ const { business } = menu;
     box-shadow: var(--shadow-xl);
     z-index: 60;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    /* GPU acceleration hint */
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
   }
@@ -461,7 +464,9 @@ const { business } = menu;
     z-index: 55;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    /* Optimize for mobile */
+    will-change: opacity;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .cart-backdrop.open {

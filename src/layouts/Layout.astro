@@ -47,9 +47,16 @@ const {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/PepoPizza/favicon.svg" />
     
-    <!-- Google Fonts -->
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/PepoPizza/assets/images/logo.webp" />
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load fonts with display=swap to prevent FOIT (Flash of Invisible Text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   </head>
   <body>
     <slot />

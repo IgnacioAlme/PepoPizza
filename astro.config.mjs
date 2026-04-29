@@ -7,4 +7,10 @@ export default defineConfig({
   base: '/PepoPizza',
   output: 'static',
   trailingSlash: 'always',
+  // Enable built-in image optimization
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
 });
